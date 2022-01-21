@@ -30,7 +30,7 @@ n = l*l # Number of pixels
 
 # Create X matrix
 X = []
-for i, filelist in enumerate(filelists[:m]):
+for filelist in filelists[:m]:
     # Open image in an array
     image = cv2.imread(filelist)
     image_shape = image.shape
@@ -74,10 +74,10 @@ plt.tight_layout()
 
 # %% PCA
 
-# Get the third first principal components and plot them
+# Get the first third principal components and plot them
 fig1 = plt.figure()
 ax1 = fig1.add_subplot(111, projection='3d')
-for j in range(X.shape[1]):
+for j in range(X.shape[1]): # Project all images along the new basis
     x = U[:, 0] @ X[:, j].T # PC1
     y = U[:, 1] @ X[:, j].T # PC2
     z = U[:, 2] @ X[:, j].T # PC3
