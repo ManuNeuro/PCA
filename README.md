@@ -9,5 +9,5 @@ It is using the [lanscape_dataset](https://www.kaggle.com/rareone0602/landscape-
 pip install opencv-python
 ```
 2.Download images from [kaggle](https://www.kaggle.com/rareone0602/landscape-pictures-pca/data) and put them in the folder : "dataset_landscape".
-
+3.Play around!
 
