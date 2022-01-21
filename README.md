@@ -12,5 +12,5 @@ pip install opencv-python
 ```
 pip install glob
 ```
-3.Download images from [kaggle](https://www.kaggle.com/rareone0602/landscape-pictures-pca/data) and put them in a folder "dataset_landscape", it musts share the same root as the code.
+3.Download images from [kaggle](https://www.kaggle.com/rareone0602/landscape-pictures-pca/data) and put them in a folder "dataset_landscape", it must share the same root as the code.
 
