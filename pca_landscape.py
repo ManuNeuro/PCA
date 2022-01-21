@@ -38,7 +38,7 @@ for filelist in filelists[:m]:
     # Resize image (needed to create the matrix)
     resized_image_gray = cv2.resize(image_gray, (l, l))
     # Reshape the image into a vector
-    X.append(resized_image_gray.reshape(resized_image_gray.size))
+    X.append(resized_image_gray.reshape(n))
 
 # Reshape to get a [n * m] matrix    
 X = np.array(X).T
