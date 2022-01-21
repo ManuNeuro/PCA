@@ -7,14 +7,13 @@ Created on Wed Jan 19 13:57:50 2022
 # !pip install opencv-python
 # !pip install glob
 
+from pathlib import Path
+
 import numpy as np
 import matplotlib.pyplot as plt
-import cv2 
 
 import glob
-
-import sys
-from pathlib import Path
+import cv2 
 
 
 # Get path for files
@@ -50,6 +49,7 @@ from scipy.linalg import svd
 
 # Compute the SVD 
 U,S,V_T = svd(X, full_matrices=False)
+Sigma = np.diag(S)
 
 # %% Plot
 
@@ -74,18 +74,18 @@ plt.tight_layout()
 
 # %% PCA
 
-# Get the first third principal components and plot them
+# Get the third first principal components and plot them
 fig1 = plt.figure()
 ax1 = fig1.add_subplot(111, projection='3d')
-for j in range(X.shape[1]): # Project all images along the new basis
+for j in range(X.shape[1]):
     x = U[:, 0] @ X[:, j].T # PC1
     y = U[:, 1] @ X[:, j].T # PC2
     z = U[:, 2] @ X[:, j].T # PC3
     
     ax1.scatter(x, y, z, s=40)
     
-ax1.set_xlabel('PC1', fontsize=18)
-ax1.set_ylabel('PC2', fontsize=18)
-ax1.set_zlabel('PC3', fontsize=18)
-ax1.set_title('The first 3 principal components', fontsize=20)
+ax1.set_xlabel('PC1', fontsize=18, labelpad=20)
+ax1.set_ylabel('PC2', fontsize=18, labelpad=20)
+ax1.set_zlabel('PC3', fontsize=18, labelpad=20)
+ax1.set_title('The first 3 principal components', fontsize=20, pad=60)
 plt.tight_layout()
